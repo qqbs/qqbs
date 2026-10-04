@@ -3,7 +3,10 @@
 Repositório público do README de perfil do GitHub. Nada interno aqui: nenhum
 dado de cliente, empresa, projeto ou rotina pessoal.
 
-- `assets/banner.svg`: gerado por `npm run banner` (texto em contorno, Inter).
+- `assets/banner.svg`: banner da marca phronesis (D-048), gerado no repositório
+  `phronesis` (`aplicacoes/github/`); não editar aqui. `npm run banner` é o
+  gerador antigo, mantido só como referência.
+- Idioma: inglês (D-011, canal global).
 - `scripts/semana.mjs`: gera `semana.svg`; a Action `semana` publica na branch
   `dados`, que o README lê. Commits fora da `main` não contam como contribuição.
 

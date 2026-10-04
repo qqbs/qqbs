@@ -1,25 +1,25 @@
-<img alt="phronesis" src="assets/banner.svg" width="100%">
+<img alt="phronesis — No one knows where it comes from. Everyone sees how it was made." src="assets/banner.svg" width="100%">
 
-Designer gráfico e administrador de operações de uma empresa de topografia. Entusiasta de linguística, filosofia, tecnologia e gestão.
+Graphic designer and operations manager at a land surveying company. Into linguistics, philosophy, technology and management.
 
-## Equipe de um
-Desenvolvo sistemas no macOS e trabalho com inteligência artificial dedicada. É uma jornada solitária, é verdade, mas plena, íntegra e autoral.
+## Team of one
+I build systems on macOS and work with dedicated artificial intelligence. It is a solitary journey, true, but a full one: whole, and my own.
 
-## Diferenciais
-- **Organização.** Processos documentados e decisões registradas, nada solto, sempre.
-- **Interesse tecnológico.** Testo, integro e automatizo o que encurta o caminho e aprimora resultados.
+## Strengths
+- **Organization.** Documented processes and recorded decisions; nothing left loose, ever.
+- **Technology.** I test, integrate and automate whatever shortens the path and improves the result.
 
-## Línguas
+## Languages
 <table>
-<tr><th width="518" align="left">Língua</th><th width="316" align="left">Fluência</th></tr>
-<tr><td>Português (pt-BR) &nbsp;🇧🇷</td><td>Nativo</td></tr>
-<tr><td>Inglês (en-US) &nbsp;🇺🇸</td><td>Avançado</td></tr>
-<tr><td>Coreano (ko-KR) &nbsp;🇰🇷</td><td>Em aprendizado</td></tr>
+<tr><th width="518" align="left">Language</th><th width="316" align="left">Proficiency</th></tr>
+<tr><td>Portuguese (pt-BR) &nbsp;🇧🇷</td><td>Native</td></tr>
+<tr><td>English (en-US) &nbsp;🇺🇸</td><td>Advanced</td></tr>
+<tr><td>Korean (ko-KR) &nbsp;🇰🇷</td><td>Learning</td></tr>
 </table>
 
-## Ferramentas
+## Tools
 `wordpress` &nbsp; `markdown` &nbsp; `obsidian` &nbsp; `supabase` &nbsp; `cloudflare` &nbsp; `github` &nbsp;
 `photoshop` &nbsp; `affinity designer` &nbsp; `claude` &nbsp; `windows` &nbsp; `macos`
 
-## Insights da semana
-<img alt="Insights da semana" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/semana.svg" width="100%">
+## This week
+<img alt="This week" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/semana.svg" width="100%">
