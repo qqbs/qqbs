@@ -1,0 +1,13 @@
+{
+  "name": "qqbs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "banner": "node scripts/banner.mjs",
+    "semana": "node scripts/semana.mjs saida"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "opentype.js": "^1.3.4"
+  }
+}

@@ -1,0 +1,63 @@
+# ----------------------------------------------------------------------------
+# Abertura automática de PR — cláusula de autoria do CLAUDE.md.
+#
+# Sessões só fazem push da branch. Esta Action abre o PR em rascunho, com
+# corpo limpo, para que nenhum ambiente injete rodapé de geração ou link de
+# sessão no corpo (a versão injetada ficaria no histórico de edições).
+#
+# PR aberto por esta Action não dispara o CI (regra do GitHub para o token
+# das Actions). O CI completo roda quando o PO marca "Ready for review".
+# Pré-requisito: Settings › Actions › General › "Allow GitHub Actions to
+# create and approve pull requests" ligado.
+# ----------------------------------------------------------------------------
+
+name: abrir-pr
+
+on:
+  push:
+    branches-ignore: [main, dados, 'dependabot/**', gh-pages]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: abrir-pr-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  abrir-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Abrir PR em rascunho, se ainda não houver
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "PR já aberto para $BRANCH."
+            exit 0
+          fi
+
+          commits=$(git log --reverse --format='%h %s' origin/main..HEAD)
+          if [ -z "$commits" ]; then
+            echo "Nada a propor: a branch não tem commits fora da main."
+            exit 0
+          fi
+          titulo=$(git log --reverse --format='%s' origin/main..HEAD | head -1)
+
+          {
+            echo "PR aberto automaticamente pela Action \`abrir-pr\` a partir da branch \`$BRANCH\`."
+            echo
+            echo "## Commits"
+            echo
+            echo "$commits" | sed 's/^/- /'
+            echo
+            echo "Rascunho: marque \"Ready for review\" para rodar o CI completo antes do merge."
+          } > corpo.md
+
+          gh pr create --draft --base main --head "$BRANCH" --title "$titulo" --body-file corpo.md

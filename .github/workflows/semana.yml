@@ -1,0 +1,46 @@
+# Atualiza o gráfico "Insights da semana" e publica na branch dados.
+# A branch é recriada a cada execução (um único commit), fora da main.
+
+name: semana
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: semana
+  cancel-in-progress: true
+
+jobs:
+  semana:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Gerar semana.svg
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/semana.mjs saida
+
+      - name: Publicar na branch dados
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd saida
+          git init -q -b dados
+          git config user.name 'phrónesis'
+          git config user.email '95658302+qqbs@users.noreply.github.com'
+          git add semana.svg
+          git commit -qm 'Insights da semana'
+          git push -fq "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" dados

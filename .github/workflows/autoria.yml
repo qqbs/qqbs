@@ -1,0 +1,68 @@
+# ----------------------------------------------------------------------------
+# Verificação de autoria — cláusula de autoria do CLAUDE.md.
+#
+# Reprova o PR quando encontra atribuição de autoria à IA ou link/ID de sessão:
+#   - branch com prefixo claude/;
+#   - commit com autor ou committer "Claude"/Anthropic;
+#   - mensagem de commit, título ou corpo do PR com trailer de coautoria da IA,
+#     rodapé "Generated with" da IA, link claude.ai/code|chat ou ID session_.
+# Menção operacional (ex.: "vide CLAUDE.md") passa.
+# ----------------------------------------------------------------------------
+
+name: autoria
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+
+jobs:
+  autoria:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Conferir autoria e IDs de sessão
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+          BRANCH: ${{ github.head_ref }}
+          TITULO: ${{ github.event.pull_request.title }}
+          CORPO: ${{ github.event.pull_request.body }}
+        run: |
+          padrao='co-authored-by:.*(claude|anthropic)|generated with.*claude|claude\.ai/(code|chat)/|session_[0-9a-z]{20,}'
+          falhas=0
+
+          case "$BRANCH" in
+            claude/*) echo "::error::Branch '$BRANCH' começa com claude/. Renomeie."; falhas=1 ;;
+          esac
+
+          autores=$(git log --format='%h %an <%ae> | %cn <%ce>' "$BASE..$HEAD" | grep -Ei 'claude|anthropic' || true)
+          if [ -n "$autores" ]; then
+            echo "::error::Commits com autor ou committer atribuído à IA:"
+            echo "$autores"
+            falhas=1
+          fi
+
+          for c in $(git rev-list "$BASE..$HEAD"); do
+            achados=$(git log -1 --format='%B' "$c" | grep -Ein "$padrao" || true)
+            if [ -n "$achados" ]; then
+              echo "::error::Mensagem do commit $(git log -1 --format=%h "$c") atribui autoria à IA ou traz link/ID de sessão:"
+              echo "$achados"
+              falhas=1
+            fi
+          done
+
+          achados=$(printf '%s\n%s\n' "$TITULO" "$CORPO" | grep -Ein "$padrao" || true)
+          if [ -n "$achados" ]; then
+            echo "::error::Título ou corpo do PR atribui autoria à IA ou traz link/ID de sessão:"
+            echo "$achados"
+            falhas=1
+          fi
+
+          [ "$falhas" -eq 0 ] && echo "Autoria limpa."
+          exit "$falhas"
