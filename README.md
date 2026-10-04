@@ -1,7 +1,6 @@
 <img alt="phronesis" src="assets/banner.svg" width="100%">
 
-Designer e administrador de uma empresa de topografia. Entusiasta de
-linguística, filosofia, tecnologia e gestão.
+Designer gráfico e administrador de operações de uma empresa de topografia. Entusiasta de linguística, filosofia, tecnologia e gestão.
 
 ## Equipe de um
 Administro sozinho. Integro sistemas no macOS e trabalho com inteligência
@@ -9,8 +8,8 @@ artificial dedicada, que faz as vezes de equipe. É uma jornada solitária,
 mas plena e íntegra.
 
 ## Diferenciais
-- **Organização.** Processos documentados, decisões registradas, nada solto.
-- **Interesse tecnológico.** Testo, integro e automatizo o que encurta o caminho.
+- **Organização.** Processos documentados e decisões registradas, nada solto, sempre.
+- **Interesse tecnológico.** Testo, integro e automatizo o que encurta o caminho e aprimora resultados.
 
 ## Línguas
 <table>
