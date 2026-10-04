@@ -48,20 +48,20 @@ const passados = dias.filter((v) => v !== null);
 const total = passados.reduce((a, b) => a + b, 0);
 const esperadoAteHoje = Math.round(esperada * passados.length);
 const pico = dias.indexOf(Math.max(...passados));
-const NOMES = ['na segunda', 'na terça', 'na quarta', 'na quinta', 'na sexta', 'no sábado', 'no domingo'];
-const virgula = (n) => n.toLocaleString('pt-BR', { maximumFractionDigits: 1 });
-const plural = (n) => `${n} ${n === 1 ? 'contribuição' : 'contribuições'}`;
+const NOMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const virgula = (n) => n.toLocaleString('en-US', { maximumFractionDigits: 1 });
+const plural = (n) => `${n} ${n === 1 ? 'contribution' : 'contributions'}`;
 
 let frase;
-if (total === 0) frase = `Nenhuma contribuição nesta semana até agora; a média esperada é de ${virgula(esperada)} por dia.`;
-else if (esperadoAteHoje === 0) frase = `${plural(total)} nesta semana, ainda sem histórico recente para comparar, com pico ${NOMES[pico]}.`;
+if (total === 0) frase = `No contributions this week so far; the expected average is ${virgula(esperada)} a day.`;
+else if (esperadoAteHoje === 0) frase = `${plural(total)} this week, no recent history to compare yet, peaking on ${NOMES[pico]}.`;
 else {
   const p = Math.round(((total - esperadoAteHoje) / esperadoAteHoje) * 100);
-  const comparacao = p === 0 ? 'em linha com a média esperada' : `${Math.abs(p)}% ${p > 0 ? 'acima' : 'abaixo'} da média esperada`;
-  frase = `${plural(total)} nesta semana, ${comparacao}, com pico ${NOMES[pico]}.`;
+  const comparacao = p === 0 ? 'in line with the expected average' : `${Math.abs(p)}% ${p > 0 ? 'above' : 'below'} the expected average`;
+  frase = `${plural(total)} this week, ${comparacao}, peaking on ${NOMES[pico]}.`;
 }
 
-const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+const MESES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const dSeg = new Date(segunda), dDom = new Date(domingo);
 const rotulo = dSeg.getUTCMonth() === dDom.getUTCMonth()
   ? `${dSeg.getUTCDate()} – ${dDom.getUTCDate()} ${MESES[dDom.getUTCMonth()]} ${dDom.getUTCFullYear()}`
@@ -74,12 +74,12 @@ const y = (v) => T + ph - (v / max) * ph;
 const partes = [`<rect width="${L}" height="${A}" fill="${COR.fundo}"/>`];
 partes.push(texto(frase, E, 40, { tam: 15, cor: COR.texto }));
 partes.push(texto(rotulo, E, 76, { tam: 13, peso: 500, cor: COR.texto }));
-partes.push(texto(`- - -  média esperada ${virgula(esperada)}/dia`, L - D, 76, { tam: 12, ancora: 'end' }));
+partes.push(texto(`- - -  expected average ${virgula(esperada)}/day`, L - D, 76, { tam: 12, ancora: 'end' }));
 for (const v of [0, max / 2, max]) {
   partes.push(`<line x1="${E}" x2="${L - D}" y1="${y(v)}" y2="${y(v)}" stroke="${COR.grade}"/>`);
   partes.push(texto(String(v), E - 10, y(v) + 4, { tam: 12, ancora: 'end' }));
 }
-const SIGLAS = ['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'];
+const SIGLAS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const bw = pw / 7;
 dias.forEach((v, i) => {
   const x = E + i * bw + bw * 0.28, lb = bw * 0.44, cx = x + lb / 2;
