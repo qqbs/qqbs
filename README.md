@@ -3,9 +3,7 @@
 Designer gráfico e administrador de operações de uma empresa de topografia. Entusiasta de linguística, filosofia, tecnologia e gestão.
 
 ## Equipe de um
-Administro sozinho. Integro sistemas no macOS e trabalho com inteligência
-artificial dedicada, que faz as vezes de equipe. É uma jornada solitária,
-mas plena e íntegra.
+Desenvolvo sistemas no macOS e trabalho com inteligência artificial dedicada. É uma jornada solitária, é verdade, mas plena, íntegra e autoral.
 
 ## Diferenciais
 - **Organização.** Processos documentados e decisões registradas, nada solto, sempre.
