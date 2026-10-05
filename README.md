@@ -21,5 +21,5 @@ I build systems on macOS and work with dedicated artificial intelligence. It is 
 `wordpress` &nbsp; `markdown` &nbsp; `obsidian` &nbsp; `supabase` &nbsp; `cloudflare` &nbsp; `github` &nbsp;
 `photoshop` &nbsp; `affinity designer` &nbsp; `claude` &nbsp; `windows` &nbsp; `macos`
 
-## This week
-<img alt="This week" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/semana.svg" width="100%">
+## Contributions
+<img alt="Contributions since January 2026: total, current streak and longest streak, with daily bars for the last 120 days" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/contribuicoes.svg" width="100%">

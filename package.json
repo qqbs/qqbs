@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "banner": "node scripts/banner.mjs",
-    "semana": "node scripts/semana.mjs saida"
+    "grafico": "node scripts/grafico.mjs saida"
   },
   "dependencies": {
     "@fontsource/inter": "^5.1.0",
