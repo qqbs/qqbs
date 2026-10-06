@@ -2,11 +2,10 @@
 
 graphic designer and operations manager at a land surveying firm.
 
+i like what i do. design and technology, broadly, at work and outside it; i don't really keep the two apart. i'm an enthusiast, so anything that touches them catches my attention: how a typeface is drawn, how a tool works, why a process runs the way it does. a lot of it i do alone, but not all of it. i like working with other people too, especially the part where we sit down, plan something, lay it out, and then do it together.
+
 ## what i do
 i run the back office end to end: schedules, field crews, documents, finances. and i build the tools that keep it running: automations, dashboards, internal sites, scripts.
-
-## how
-every process written down, every decision recorded. ai is a working partner (claude code), not a shortcut. design gives the form; systems give the rhythm.
 
 ## languages
 <table>
