@@ -5,9 +5,14 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const carregar = (peso) =>
   opentype.loadSync(require.resolve(`@fontsource/inter/files/inter-latin-${peso}-normal.woff`));
-const FONTES = { 400: carregar(400), 500: carregar(500) };
+const FONTES = { 400: carregar(400), 500: carregar(500), 600: carregar(600) };
 
 export const COR = { fundo: '#202020', texto: '#f2f2f2', apagado: '#8c8c8c', grade: '#2c2c2c' };
+
+// Par Papel (tokens do design system phronesis, D-021)
+export const PAPEL = { tinta: '#0C0B0A', papel: '#F2F0EB', secundario: '#8D8A84', fio: '#3A3733', fioSutil: '#24221F' };
+
+export const largura = (str, tam, peso = 400, espaco = 0) => FONTES[peso].getAdvanceWidth(str, tam, { letterSpacing: espaco / tam });
 
 // ancora: 'start' | 'middle' | 'end'; espaco: tracking em px
 export function texto(str, x, y, { tam = 13, peso = 400, cor = COR.apagado, ancora = 'start', espaco = 0 } = {}) {
