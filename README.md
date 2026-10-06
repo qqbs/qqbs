@@ -1,25 +1,26 @@
 <img alt="phronesis — No one knows where it comes from. Everyone sees how it was made." src="assets/banner.svg" width="100%">
 
-Graphic designer and operations manager at a land surveying company. Into linguistics, philosophy, technology and management.
+graphic designer and operations manager at a land surveying firm.
 
-## Team of one
-I build systems on macOS and work with dedicated artificial intelligence. It is a solitary journey, true, but a full one: whole, and my own.
+## what i do
+i run the back office end to end: schedules, field crews, documents, finances. and i build the tools that keep it running: automations, dashboards, internal sites, scripts.
 
-## Strengths
-- **Organization.** Documented processes and recorded decisions; nothing left loose, ever.
-- **Technology.** I test, integrate and automate whatever shortens the path and improves the result.
+## how
+every process written down, every decision recorded. ai is a working partner (claude code), not a shortcut. design gives the form; systems give the rhythm.
 
-## Languages
+## languages
 <table>
-<tr><th width="518" align="left">Language</th><th width="316" align="left">Proficiency</th></tr>
-<tr><td>Portuguese (pt-BR) &nbsp;🇧🇷</td><td>Native</td></tr>
-<tr><td>English (en-US) &nbsp;🇺🇸</td><td>Advanced</td></tr>
-<tr><td>Korean (ko-KR) &nbsp;🇰🇷</td><td>Learning</td></tr>
+<tr><th width="518" align="left">language</th><th width="316" align="left">proficiency</th></tr>
+<tr><td>portuguese (pt-BR) &nbsp;🇧🇷</td><td>native</td></tr>
+<tr><td>english (en-US) &nbsp;🇺🇸</td><td>advanced</td></tr>
+<tr><td>korean (ko-KR) &nbsp;🇰🇷</td><td>learning</td></tr>
 </table>
 
-## Tools
-`wordpress` &nbsp; `markdown` &nbsp; `obsidian` &nbsp; `supabase` &nbsp; `cloudflare` &nbsp; `github` &nbsp;
-`photoshop` &nbsp; `affinity designer` &nbsp; `claude` &nbsp; `windows` &nbsp; `macos`
+## tools
+<img alt="tools — design: figma, adobe photoshop, adobe after effects, affinity designer · build: claude code, github, supabase, cloudflare, wordpress, elementor · write: obsidian, markdown, ghostty · organize: todoist, asana, trello, miro · systems: macos, windows" src="assets/ferramentas.svg" width="100%">
 
-## Contributions
-<img alt="Contributions since January 2026: total, current streak and longest streak, with daily bars for the last 120 days" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/contribuicoes.svg" width="100%">
+## contributions
+<img alt="contributions since january 2026: total, current streak and longest streak, with daily bars for the last 120 days" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/contribuicoes.svg" width="100%">
+
+## listening
+what's on repeat lives on [stats.fm](https://stats.fm/ndndnjdd).

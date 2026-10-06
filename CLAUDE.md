@@ -11,6 +11,12 @@ dado de cliente, empresa, projeto ou rotina pessoal.
   barras de 120 dias, desde 2026, par Papel); a Action `grafico` publica na
   branch `dados`, que o README lê. Commits fora da `main` não contam como
   contribuição. Dados em `scripts/contribuicoes.mjs`.
+- `assets/ferramentas.svg`: estático (D-055, colunas por grupo), gerado por
+  `npm run ferramentas` a partir da lista em `scripts/ferramentas.mjs`. Ícones
+  do Simple Icons; Adobe, Affinity e Windows saíram de lá a pedido das
+  marcas, por isso viram monograma próprio.
+- Texto do README em caixa baixa (D-020), exceto códigos de idioma e o alt do
+  banner.
 
 ## Autoria (cláusula pétrea)
 
