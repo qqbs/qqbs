@@ -2,7 +2,7 @@
 // dos últimos 120 dias (sequência atual em papel). Uso: node scripts/grafico.mjs <pasta-de-saida>
 import fs from 'node:fs';
 import path from 'node:path';
-import { texto, PAPEL as P } from './texto.mjs';
+import { texto, largura, PAPEL as P } from './texto.mjs';
 import { historico, resumo, FUSO } from './contribuicoes.mjs';
 
 const SAIDA = process.argv[2] || 'saida';
@@ -44,14 +44,23 @@ ult.forEach((d, i) => {
   if (!d.n) return;
   const h = Math.max(1, (d.n / max) * ph), x = M + i * passo;
   const acesa = r.atual.n && d.data >= r.atual.inicio;
-  p.push(`<rect x="${x.toFixed(1)}" y="${(base - h).toFixed(1)}" width="${lb.toFixed(1)}" height="${h.toFixed(1)}" fill="${acesa ? P.papel : P.secundario}"/>`);
+  const viva = i === ult.length - 1 ? ' class="pulso"' : '';
+  p.push(`<rect${viva} x="${x.toFixed(1)}" y="${(base - h).toFixed(1)}" width="${lb.toFixed(1)}" height="${h.toFixed(1)}" fill="${acesa ? P.papel : P.secundario}"/>`);
 });
+// Today: contagem do dia, ao vivo (a Action roda de hora em hora)
+const hoje = ult.at(-1).n;
+const ponto = (cx, cy) => `<circle class="pulso" cx="${cx}" cy="${cy}" r="3" fill="${P.papel}"/>`;
+// rodapé: ponto vivo e a contagem do dia, à direita do last updated (D-056)
+const t = `${hoje} ${hoje === 1 ? 'contribution' : 'contributions'} today`;
+p.push(ponto(L - M - largura(t, 11, 500) - 12, A - 32));
+p.push(texto(t, L - M, A - 28, { tam: 11, peso: 500, cor: P.papel, ancora: 'end' }));
 p.push(texto(curta(ult[0].data), M, base + 22, { tam: 11, cor: P.secundario }));
 p.push(texto('today', L - M, base + 22, { tam: 11, cor: P.secundario, ancora: 'end' }));
 p.push(texto(`last updated ${agora} brt`, M, A - 28, { tam: 11, cor: P.secundario }));
 
 const rotulo = `${r.total.toLocaleString('en-US')} contributions since ${r.desde.slice(0, 4)}; current streak ${dias_(r.atual.n)}; longest ${dias_(r.recorde.n)}.`;
-const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L} ${A}" width="${L}" height="${A}" role="img" aria-label="${rotulo}">\n<rect width="${L}" height="${A}" fill="${P.tinta}"/>\n${p.join('\n')}\n</svg>\n`;
+const estilo = '<style>.pulso{animation:p 2s cubic-bezier(.65,0,.35,1) infinite}@keyframes p{0%,100%{opacity:1}50%{opacity:.3}}</style>';
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${L} ${A}" width="${L}" height="${A}" role="img" aria-label="${rotulo}">\n${estilo}\n<rect width="${L}" height="${A}" fill="${P.tinta}"/>\n${p.join('\n')}\n</svg>\n`;
 fs.mkdirSync(SAIDA, { recursive: true });
 fs.writeFileSync(path.join(SAIDA, 'contribuicoes.svg'), svg);
 console.log(rotulo);

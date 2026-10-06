@@ -1,15 +1,17 @@
 # Atualiza o gráfico de contribuições e publica na branch dados.
 # A branch é recriada a cada execução (um único commit), fora da main.
+# De hora em hora: repositório público não consome minutos pagos.
 
 name: grafico
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: grafico
@@ -44,3 +46,10 @@ jobs:
           git add contribuicoes.svg
           git commit -qm 'Gráfico de contribuições'
           git push -fq "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" dados
+
+      # Keepalive: o GitHub desliga agendamentos após 60 dias sem atividade no
+      # repositório; reativar o próprio workflow pela API zera essa contagem.
+      - name: Manter o agendamento ativo
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/grafico.yml/enable"
