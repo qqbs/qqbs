@@ -23,7 +23,7 @@ const GRUPOS = [
   ['build', [['claude code', simple(si.siClaude)], ['github', simple(si.siGithub)], ['supabase', simple(si.siSupabase)], ['cloudflare', simple(si.siCloudflare)], ['wordpress', simple(si.siWordpress)], ['elementor', simple(si.siElementor)]]],
   ['write', [['obsidian', simple(si.siObsidian)], ['markdown', simple(si.siMarkdown)], ['ghostty', simple(si.siGhostty)]]],
   ['organize', [['todoist', simple(si.siTodoist)], ['asana', simple(si.siAsana)], ['trello', simple(si.siTrello)], ['miro', simple(si.siMiro)]]],
-  ['systems', [['macos', simple(si.siApple)], ['windows', janelas]]],
+  ['systems', [['macos', simple(si.siApple)], ['windows', janelas], ['keyboard maestro', mono('Km')]]],
 ];
 const TODAS = GRUPOS.flatMap(([, f]) => f);
 
