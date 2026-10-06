@@ -1,7 +1,5 @@
 <img alt="phronesis — No one knows where it comes from. Everyone sees how it was made." src="assets/banner.svg" width="100%">
 
-graphic designer and operations manager at a land surveying firm.
-
 i like what i do. design and technology, broadly, at work and outside it; i don't really keep the two apart. i'm an enthusiast, so anything that touches them catches my attention: how a typeface is drawn, how a tool works, why a process runs the way it does. a lot of it i do alone, but not all of it. i like working with other people too, especially the part where we sit down, plan something, lay it out, and then do it together.
 
 ## what i do
