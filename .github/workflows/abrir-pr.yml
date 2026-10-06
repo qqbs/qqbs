@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------------
-# Abertura automática de PR — cláusula de autoria do CLAUDE.md.
+# Abertura automática de PR em rascunho, com corpo limpo.
 #
 # Sessões só fazem push da branch. Esta Action abre o PR em rascunho, com
 # corpo limpo, para que nenhum ambiente injete rodapé de geração ou link de
