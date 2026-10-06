@@ -21,7 +21,7 @@ const simple = (icone) => (x, y, s, cor) =>
 const GRUPOS = [
   ['design', [['figma', simple(si.siFigma)], ['adobe photoshop', mono('Ps')], ['adobe after effects', mono('Ae')], ['affinity designer', mono('Ad')]]],
   ['build', [['claude code', simple(si.siClaude)], ['github', simple(si.siGithub)], ['supabase', simple(si.siSupabase)], ['cloudflare', simple(si.siCloudflare)], ['wordpress', simple(si.siWordpress)], ['elementor', simple(si.siElementor)]]],
-  ['write', [['obsidian', simple(si.siObsidian)], ['markdown', simple(si.siMarkdown)], ['ghostty', simple(si.siGhostty)]]],
+  ['write', [['obsidian', simple(si.siObsidian)], ['markdown', simple(si.siMarkdown)], ['ghostty', simple(si.siGhostty)], ['keyboard maestro', mono('Km')]]],
   ['organize', [['todoist', simple(si.siTodoist)], ['asana', simple(si.siAsana)], ['trello', simple(si.siTrello)], ['miro', simple(si.siMiro)]]],
   ['systems', [['macos', simple(si.siApple)], ['windows', janelas]]],
 ];
