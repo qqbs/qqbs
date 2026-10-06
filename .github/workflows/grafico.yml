@@ -8,6 +8,10 @@ on:
   schedule:
     - cron: '17 * * * *'
   workflow_dispatch:
+  # Merge que mexe no gráfico publica na hora, sem esperar o agendamento
+  push:
+    branches: [main]
+    paths: ['scripts/**', 'package*.json', '.github/workflows/grafico.yml']
 
 permissions:
   contents: write
