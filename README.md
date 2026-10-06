@@ -20,6 +20,3 @@ i run the back office end to end: schedules, field crews, documents, finances. a
 
 ## contributions
 <img alt="contributions since january 2026: total, current streak and longest streak, with daily bars for the last 120 days" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/contribuicoes.svg" width="100%">
-
-## listening
-what's on repeat lives on [stats.fm](https://stats.fm/ndndnjdd).
