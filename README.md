@@ -14,7 +14,7 @@ i run the back office end to end: schedules, field crews, documents, finances. a
 </table>
 
 ## tools
-<img alt="tools — design: figma, adobe photoshop, adobe after effects, affinity designer · build: claude code, github, supabase, cloudflare, wordpress, elementor · write: obsidian, markdown, ghostty · organize: todoist, asana, trello, miro · systems: macos, windows, keyboard maestro" src="assets/ferramentas.svg" width="100%">
+<img alt="tools — design: figma, adobe photoshop, adobe after effects, affinity designer · build: claude code, github, supabase, cloudflare, wordpress, elementor · write: obsidian, markdown, ghostty, keyboard maestro · organize: todoist, asana, trello, miro · systems: macos, windows" src="assets/ferramentas.svg" width="100%">
 
 ## contributions
 <img alt="contributions since january 2026: total, current streak and longest streak, with daily bars for the last 120 days" src="https://raw.githubusercontent.com/qqbs/qqbs/dados/contribuicoes.svg" width="100%">
