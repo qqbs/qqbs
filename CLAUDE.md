@@ -7,8 +7,9 @@ dado de cliente, empresa, projeto ou rotina pessoal.
   `phronesis` (`aplicacoes/github/`); não editar aqui. `npm run banner` é o
   gerador antigo, mantido só como referência.
 - Idioma: inglês (D-011, canal global).
-- `scripts/grafico.mjs`: gera `contribuicoes.svg` (D-054: total, sequências e
-  barras de 120 dias, desde 2026, par Papel); a Action `grafico` publica na
+- `scripts/grafico.mjs`: gera `contribuicoes.svg` (D-054: total, sequências,
+  barras de 120 dias, desde 2026, par Papel; D-056: "today" vivo no rodapé);
+  a Action `grafico` roda de hora em hora (com keepalive) e publica na
   branch `dados`, que o README lê. Commits fora da `main` não contam como
   contribuição. Dados em `scripts/contribuicoes.mjs`.
 - `assets/ferramentas.svg`: estático (D-055, colunas por grupo), gerado por
